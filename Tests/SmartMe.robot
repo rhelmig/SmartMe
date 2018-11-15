@@ -2,7 +2,6 @@
 Documentation   	Sample run against a Smart Me live demo.
 Library   	        SeleniumLibrary   15.0   5.0
 Resource            ../Resources/Common.robot
-
 Suite Setup  Begin Test
 #Suite Teardown   End Test
 

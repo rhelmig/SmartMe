@@ -1,7 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
 
-
 *** Variables ***
 ${Browser}   	Chrome
 ${url}          http://smart-me.com/Description/Demo/
