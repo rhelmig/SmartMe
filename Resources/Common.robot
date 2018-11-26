@@ -17,7 +17,7 @@ End test
 
 1 On
     select frame        //*[@id="liveDemoDiv"]/iframe
-    click link          //*[@id="MainContent_FolderTree_lbASTreeNode3"]
+    click link          1 Ph Zähler
     Click Element   	SwitchOnIconOutput10
 	Click Element   	SwitchButtonOn1
 	sleep  5s
@@ -26,7 +26,7 @@ End test
     log  ${watts_ph1}
 
 3 On
-    click link          //*[@id="MainContent_FolderTree_lbASTreeNode4"]
+    click link          3 Ph Zähler
     sleep  2s
     Click Element   	SwitchOnIconOutput1
 	Click Element   	SwitchOnIconOutput2
@@ -40,7 +40,7 @@ End test
     log  ${watts_on}
 
 Plug On
-    click link                      //*[@id="MainContent_FolderTree_lbASTreeNode5"]
+    click link                      Plug
     wait until element is visible   //*[@id="SwitchButtonOff1"]
     click element                   //*[@id="SwitchButtonOff1"]
     sleep  2s
@@ -52,15 +52,15 @@ Plug On
     log  ${watts}
 
 1 Off
-    click link                          //*[@id="MainContent_FolderTree_lbASTreeNode3"]
+    click link                          1 Ph Zähler
     Wait Until Element Is Visible   	SwitchButtonOff1
 	Click Element   	                SwitchButtonOff1
-    ${watts}  get text              //*[@id="Tile1"]
+    ${watts}  get text                  //*[@id="Tile1"]
     capture page screenshot
     log  ${watts}
 
 3 Off
-    click link          //*[@id="MainContent_FolderTree_lbASTreeNode4"]
+    click link          3 Ph Zähler
 	Click Element   	SwitchOffIconOutput1
 	Click Element   	SwitchOffIconOutput2
 	Click Element   	SwitchOffIconOutput3
@@ -74,15 +74,15 @@ Plug On
 
 Plug Off
     select frame        //*[@id="liveDemoDiv"]/iframe
-    Click Link   	MainContent_FolderTree_lbASTreeNode5
+    Click Link   	    Plug
     sleep  5s
     ${light_watts}  get text  //*[@id="Tile1"]
     capture page screenshot
     log  ${light_watts}
 
 No Power
-    click element       //*[@id="SwitchButtonOn1"]
-    ${final_watts}  get text  //*[@id="Tile1"]
+    click element               //*[@id="SwitchButtonOn1"]
+    ${final_watts}  get text    //*[@id="Tile1"]
     capture page screenshot
     # Watts remain when all are off. Expected result???
     should be true  ${final_watts} <= 0.5
